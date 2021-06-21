@@ -1,4 +1,4 @@
-// Outline and Psuedo Code provided from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash
+// Outline, Psuedo Code, and JS Code provided from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash (with some changes/additions)
 
 // 1. GENERATE random number between 1 and 100
 // 2. RECORD player's turn number, start on 1
@@ -67,4 +67,24 @@ function setGameOver() {
     resetButton.textContent = 'Start new game';
     document.body.append(resetButton);
     resetButton.addEventListener('click', resetGame);
+};
+
+function resetGame() {
+    guessCount = 1;
+
+    const resetParas = document.querySelectorAll('.resultParas p');
+    for (let i = 0; i < resetParas.length; i++) {
+        resetParas[i].textContent = '';
+    }
+
+    resetButton.parentNode.removeChild(resetButton);
+
+    guessField.disabled = false;
+    guessSubmit.disabled = false;
+    guessField.value = '';
+    guessField.focus();
+
+    lastResult.style.backgroundColor = 'black';
+
+    randomNumber = Math.floor(Math.random() * 100) + 1;
 };
