@@ -16,3 +16,14 @@
 // 8.3. IF GUESS FALSE and TURNS FALSE => DISPLAY 'RESTART' BUTTON
 // 9. IF 'RESTART' CLICKED => GAME LOGIC and UI RESET => RETURN to 'STEP 1'
 
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+const guesses = document.querySelector('.guesses');
+const lastResult = document.querySelector('.lastResult');
+const lowOrHi = document.querySelector('.lowOrHi');
+
+const guessSubmit = document.querySelector('.guessSubmit');
+const guessField = document.querySelector('.guessField');
+
+let guessCount = 1;
+let resetButton;
